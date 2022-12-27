@@ -55,7 +55,7 @@ unit_isDateCorrect = do
 prop_isDateCorrect year =
     False === isDateCorrect 30 02 year
         .&&. False === isDateCorrect 31 04 year
-        .&&. False === isDateCorrect 31 07 year
+        .&&. False === isDateCorrect 31 06 year
 
 unit_myPow = do
     myPow 23 1 @?= 23

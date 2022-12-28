@@ -14,7 +14,7 @@ myFoldr :: (a -> b -> b) -> b -> [a] -> b
 myFoldr f z [] = z
 myFoldr f z (h:t) = f h (myFoldr f z t)
 
--- пояснение:  myFoldl f a [x,y,z] = x `f` (y `f` (z `f` a))
+-- пояснение:  myFoldr f a [x,y,z] = x `f` (y `f` (z `f` a))
 
 -- Используя реализации свёрток выше, реализуйте все остальные функции в данном файле
 

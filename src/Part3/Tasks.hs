@@ -16,7 +16,8 @@ mostFreq = notImplementedYet
 
 -- Дан список lst. Вернуть список элементов из lst без повторений, порядок может быть произвольным.
 uniq :: (Eq a) => [a] -> [a]
-uniq = notImplementedYet
+uniq [] = []
+uniq list = head list : uniq (filter (\y -> (head list /= y)) (tail list))
 
 -- Функция grokBy принимает на вход список Lst и функцию F и каждому возможному
 -- значению результата применения F к элементам Lst ставит в соответствие список элементов Lst,

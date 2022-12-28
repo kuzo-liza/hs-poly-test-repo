@@ -36,5 +36,7 @@ myFilter :: (a -> Bool) -> [a] -> [a]
 myFilter p xs = myFoldr (\y x -> if p y then y:x else x) [] xs
 
 myPartition :: (a -> Bool) -> [a] -> ([a], [a])
-myPartition p = notImplementedYet
+myPartition p xs = myFoldr (\x (as, bs) -> if p x then (x:as, bs) else (as, x:bs)) ([],[]) xs
 
+-- функция разделяет список на пару списков, в первом находятся те элементы, для которых предикат вернул True,
+-- во втором списке - все остальные элементы исходного списка
